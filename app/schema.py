@@ -162,18 +162,18 @@ class Query(graphene.ObjectType):
     filter_all_data=graphene.List(CustomersSchema)
     def resolve_filter_all_data(self,info):
 
-        return customers_data
+      return customers_data
     
     def resolve_filter(self,info,mac_address):
-        #print(id)
-        for cust_data in customers_data:
-          #print(cust_data)
-          if mac_address==cust_data['mac_address']:
-            #print('hi')
-            return cust_data
-          else:
-            #print('byee')
-            return{
+      #print(id)
+      for cust_data in customers_data:
+        #print(cust_data)
+        if mac_address==cust_data['mac_address']:
+          #print('hi')
+          return cust_data
+        else:
+          #print('byee')
+          return{
       "name": None,
       "productName": None,
       "mobileNo": None

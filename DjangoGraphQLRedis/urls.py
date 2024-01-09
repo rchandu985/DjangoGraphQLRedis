@@ -16,11 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from graphene_django.views import GraphQLView
-from .schema import schema #Schema we want to query
+#from .schema import schema #Schema we want to query
 from django.views.decorators.csrf import csrf_exempt
-
+from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("graphql/", csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema))),
-
+    path("brh/",include("app.urls"))
 ]
